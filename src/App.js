@@ -84,18 +84,18 @@ export default function App() {
 
   return (
     <div class="flex  bg-[#191308] h-screen">
-      <div class="m-auto bg-[#322A26] w-1/4 h-[500px]">
+      <div class="m-auto bg-[#322A26] sm:h-[500px] h-[600px]  w-[300px] sm:w-1/4 md:w-1/2 l:w-1/4 xl:w-1/4">
         <h2 class="w-1/2  pt-10 ml-5  antialiased font-bold text-white fw-bold italic text-xl">
           Password generator
         </h2>
-        <div class="flex justify-between">
+        <div class="sm:flex justify-between">
           <input
             type="text"
             value={handleText}
             onChange={(e) => setHandleText(e.target.value)}
             autoComplete="off"
             placeholder="heslo"
-            class="ml-5 mt-10 p-2 w-[300px] rounded"
+            class="ml-5 mt-10 p-2 sm:w-[300px] rounded"
           ></input>
           <button
             type="button"
@@ -108,7 +108,7 @@ export default function App() {
                 }, 2000);
               }
             }}
-            class="rounded-lg text-sm  text-center mt-10 mr-4 px-9 ml-4  bg-[#454B66] text-white flex-none"
+            class="rounded-lg text-sm  text-center mt-3 sm:mt-10 mr-4 py-2 px-4 sm:px-9 ml-4  bg-[#454B66] text-white flex-none"
           >
             {copied ? 'Copied!' : 'Copy text'}
           </button>
