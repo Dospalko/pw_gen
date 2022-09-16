@@ -83,9 +83,10 @@ export default function App() {
   }
 
   return (
-    <div class="flex  bg-[#191308] h-screen">
-      <div class="m-auto bg-[#322A26] sm:h-[500px] h-[600px]  w-[300px] sm:w-1/4 md:w-1/2 l:w-1/4 xl:w-1/4">
-        <h2 class="w-1/2  pt-10 ml-5  antialiased font-bold text-white fw-bold italic text-xl">
+    <div class="flex  bg-[#fff4f4] h-screen">
+      <div class="flex m-auto w-full h-[700px] bg-[#E3F2FD] ">
+      <div class="m-auto bg-[#8AA29E] sm:h-[500px] h-[600px] border-20  w-[300px] sm:w-1/4 md:w-1/2 l:w-1/4 xl:w-1/4">
+        <h2 class="w-1/2  pt-10 ml-5  antialiased font-bold text-[#3F4039]  italic text-xl">
           Password generator
         </h2>
         <div class="sm:flex justify-between">
@@ -105,53 +106,55 @@ export default function App() {
                 setCopied(true);
                 setInterval(() => {
                   setCopied(false);
-                }, 2000);
+                }, 4000);
               }
             }}
-            class="rounded-lg text-sm  text-center mt-3 sm:mt-10 mr-4 py-2 px-4 sm:px-9 ml-4  bg-[#454B66] text-white flex-none"
+            class="rounded-lg text-sm  text-center mt-3 sm:mt-10 mr-4 py-2 px-4 sm:px-9 ml-4  bg-[#E3F2FD] text-black flex-none"
           >
             {copied ? 'Copied!' : 'Copy text'}
           </button>
         </div>
         <div class="w-full mt-5 flex justify-between">
-          <label class="text-white ml-5">Password length</label>
+          <label class="text-white font-semibold ml-5">Password length</label>
           <input
                type="number"
                min="4"
                max="20"
                value={password.length}
                onChange={(e) => setPasswordLength(e.target.value)}
-            class="w-1/6 mr-4 "
+            class="w-1/6 mr-4 pl-2"
           />
         </div>
         <div class="w-full mt-5 flex justify-between">
-          <label class="text-white ml-5">Include capital letters</label>
+          <label class="text-white ml-5 font-semibold">Include capital letters</label>
           <Checkbox
             value={password.uppercase}
             onChange={handleChangeUppercase}
           />
         </div>
         <div class="w-full mt-5 flex justify-between">
-          <label class="text-white ml-5">Include small letters</label>
+          <label class="text-white ml-5 font-semibold">Include small letters</label>
           <Checkbox
             value={password.lowercase}
             onChange={handleChangeLowercase}
           />
         </div>
         <div class="w-full mt-5 flex justify-between">
-          <label class="text-white ml-5">Numbers</label>
+          <label class="text-white ml-5 font-semibold">Numbers</label>
           <Checkbox value={password.numbers} onChange={handleChangeNumbers} />
         </div>
         <div class="w-full mt-5 flex justify-between">
-          <label class="text-white ml-5">Symbols</label>
+          <label class="text-white ml-5 font-semibold">Symbols</label>
           <Checkbox value={password.symbols} onChange={handleChangeSymbols} />
         </div>
         <button
           onClick={generatePassword}
-          class="rounded-lg bg-white mx-auto flex mt-10 px-10 py-5"
+          class="rounded-lg bg-white mx-auto flex mt-10 px-10 py-5 font-semibold hover:bg-blue-700 drop-shadow-xl transition duration-700 ease-in-out hover:text-white sepia"
         >
           Generate password
         </button>
+        
+      </div>
       </div>
     </div>
   );

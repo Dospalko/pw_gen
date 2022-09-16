@@ -3,7 +3,7 @@ function Checkbox(props){
 
     return (
         <>
-            <input type="checkbox" class="mr-4 w-[20px] h-[20px]" checked={value} onChange={onChange}/>
+            <input type="checkbox" class="mr-4 w-[20px] h-[20px] accent-[#E3F2FD]" checked={value} onChange={onChange}/>
         </>
     )
 }
